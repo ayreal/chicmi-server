@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(
+u = User.create(
   name: "Ariel",
   password: "abc",
   email: "aeh.herman@gmail.com",
@@ -18,7 +18,7 @@ User.create(
   bio: "Fan of fancy frocks in NYC"
 )
 
-Event.find_or_create_by(
+e = Event.find_or_create_by(
   external_id: "11878",
   address_business_name: "Apropo Studio",
   address_street_1: "43 West 24th Street",
@@ -33,4 +33,3 @@ Event.find_or_create_by(
 )
 
 Designer.find_or_create_by(external_id: "4117", designer_name_en: "Quest Collection")
-Comment.find_or_create_by(text: "This event looks amazing!")
