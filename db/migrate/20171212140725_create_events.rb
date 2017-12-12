@@ -4,6 +4,8 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string   :external_id
       t.string   :address_business_name
       t.string   :address_street_1
+      t.string   :address_street_2
+      t.string   :slug
       t.string   :address_city
       t.string   :address_zip
       t.string   :event_name_en
@@ -11,7 +13,6 @@ class CreateEvents < ActiveRecord::Migration[5.1]
       t.string   :end_date
       t.string   :summary
       t.string   :is_hot, :default => "0"
-      t.boolean  :is_following, :default => false
       t.timestamps
     end
   end
