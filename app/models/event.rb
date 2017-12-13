@@ -12,7 +12,6 @@ class Event < ApplicationRecord
       ue.comments.each{|c| comments << c}
     end
     comments
-    # byebug
   end
 
 end

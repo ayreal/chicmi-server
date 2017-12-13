@@ -7,7 +7,6 @@ class Api::V1::EventsController < ApplicationController
   def show
     event = Event.find_by(id: params[:id])
     comments = event.comments
-byebug
     render json: event.to_json(include: [:comments])
   end
 end
