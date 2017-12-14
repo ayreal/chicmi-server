@@ -19,23 +19,30 @@ class Api::V1::AuthController < ApplicationController
         bio: user.bio
        }
 
-
-      # create_table "users", force: :cascade do |t|
-      #   t.string "name"
-      #   t.string "email"
-      #   t.string "photo"
-      #   t.integer "city_id"
-      #   t.string "username"
-      #   t.string "twitter"
-      #   t.string "instagram"
-      #   t.text "bio"
-      #   t.string "password_digest"
-      #   t.datetime "created_at", null: false
-      #   t.datetime "updated_at", null: false
-      # end
-      #
     else
       render json: {error: "Could not authorize this user"}, status: 401
+    end
+  end
+
+  def show
+    byebug
+    token = request.headers['Authorization']
+    decoded_token =  JWT.decode(token, ENV['MY_SECRET'], true, { :algorithm => ENV['AYREAL'] })
+    # => [{"user_id"=>23}, {"alg"=>"HS256"}]
+    user_id = decoded_token.first['user_id']
+    user = User.find_by(id: user_id)
+    if user
+      render json: {
+        id: user.id,
+        name: user.name,
+        username:user.username,
+        gender_choice: user.gender_choice,
+        interests: user.interests,
+        matches: user.matches,
+        location: user.location
+      }
+    else
+      render json: {error: "Could not find this user. Username or password is incorrect."}, status: 401
     end
   end
 
