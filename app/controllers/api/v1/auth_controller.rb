@@ -8,7 +8,7 @@ class Api::V1::AuthController < ApplicationController
       token = JWT.encode(payload, ENV["MY_SECRET"], ENV["KENNITH"])
       render json: {
         token: token,
-        id: user.id
+        id: user.id,
         name: user.name,
         email: user.email,
         photo: user.photo,
