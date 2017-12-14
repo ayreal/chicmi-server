@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       resources :events, only: [:index, :create, :show]
       resources :comments, only: [:index, :create, :update, :destroy]
       post '/login', to: 'auth#create'
-      get '/current_user', to: 'auth#show'
+      post '/current_user', to: 'auth#show'
     end
   end
 end
