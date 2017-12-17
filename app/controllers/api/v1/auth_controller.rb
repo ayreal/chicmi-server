@@ -40,7 +40,8 @@ class Api::V1::AuthController < ApplicationController
         username: user.username,
         twitter: user.twitter,
         instagram: user.instagram,
-        bio: user.bio
+        bio: user.bio,
+        events: user.events
       }
     else
       render json: {error: "Could not find this user. Username or password is incorrect."}, status: 401
