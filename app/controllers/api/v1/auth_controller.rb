@@ -16,7 +16,9 @@ class Api::V1::AuthController < ApplicationController
         username: user.username,
         twitter: user.twitter,
         instagram: user.instagram,
-        bio: user.bio
+        bio: user.bio,
+        events: user.events
+        
        }
 
     else
