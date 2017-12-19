@@ -23,7 +23,22 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def destroy
-    byebug
+    user = User.find_by(id: params[:user_id])
+    event = Event.find_by(id: params[:id])
+    user.user_events.find_by(event_id: event.id).delete
+    render json:
+    {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      photo: user.photo,
+      city_id: user.city_id,
+      username: user.username,
+      twitter: user.twitter,
+      instagram: user.instagram,
+      bio: user.bio,
+      events: user.events
+    }
   end
 
   private
