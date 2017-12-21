@@ -7,8 +7,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
       post '/login', to: 'auth#create'
       post '/current_user', to: 'auth#show'
-      post '/new_event', to: 'events#show'
-      post '/get_event', to: 'events#index'
+      # post '/new_event', to: 'events#show'
+      post '/get_event', to: 'events#show'
     end
   end
 end

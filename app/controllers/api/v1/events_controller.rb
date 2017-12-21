@@ -1,21 +1,21 @@
 class Api::V1::EventsController < ApplicationController
-  def index
-    event = Event.find_by(slug: params[:slug])
-    render json: event.to_json(include: [:comments])
-  end
+  # def index
+  #   byebug
+  #   event = Event.find_by(slug: params[:slug])
+  #   render json: event.to_json(include: [:comments])
+  # end
 
   def show
-    event = Event.find_by(external_id: params[:event][:event_id])
-    if !event
-      event = Event.new(event_params)
-      event.external_id = params[:event][:event_id]
-      event.save!
-    end
+    # finding something in the external API and persisting
+    event = Event.find_or_create_by(event_params)
+    event.external_id = params[:event][:event_id]
+    event.save!
+
     render json: event.to_json(include: [:comments])
   end
 
   def create
-    # byebug
+    # creating a new UserEvent instance
     user = User.find_by(id: params[:user_id])
     event = Event.find_by(id: params[:event][:id])
     user.events << event
@@ -35,6 +35,7 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def destroy
+    # deleting a UserEvent instance
     user = User.find_by(id: params[:user_id])
     event = Event.find_by(id: params[:id])
     user.user_events.find_by(event_id: event.id).delete
