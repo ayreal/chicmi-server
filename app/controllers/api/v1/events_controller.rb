@@ -5,8 +5,14 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def show
-    event = Event.find_by(id: params[:id])
-    render json: event.to_json
+    # byebug
+    event = Event.find_by(external_id: params[:event][:event_id])
+    if !event
+      event = Event.new(event_params)
+      event.external_id = params[:event][:event_id]
+      event.save!
+    end
+    render json: event.to_json(include: [:comments])
   end
 
   def create
