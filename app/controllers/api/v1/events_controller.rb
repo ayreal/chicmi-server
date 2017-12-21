@@ -5,7 +5,6 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def show
-    # byebug
     event = Event.find_by(external_id: params[:event][:event_id])
     if !event
       event = Event.new(event_params)
@@ -16,13 +15,9 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def create
+    # byebug
     user = User.find_by(id: params[:user_id])
-    event = Event.find_by(external_id: params[:event][:event_id])
-    if !event
-      event = Event.new(event_params)
-      event.external_id = params[:event][:event_id]
-      event.save!
-    end
+    event = Event.find_by(id: params[:event][:id])
     user.events << event
     render json:
     {
