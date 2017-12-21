@@ -1,7 +1,7 @@
 class Api::V1::EventsController < ApplicationController
   def index
-    events = Event.all
-    render json: events.to_json(include: [:comments])
+    event = Event.find_by(slug: params[:slug])
+    render json: event.to_json(include: [:comments])
   end
 
   def show
