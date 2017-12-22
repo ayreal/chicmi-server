@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(version: 20171222153504) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "event_hero_url"
-    t.string "longitude"
-    t.string "latitude"
+    t.float "longitude"
+    t.float "latitude"
     t.string "event_logo_pin"
   end
 
