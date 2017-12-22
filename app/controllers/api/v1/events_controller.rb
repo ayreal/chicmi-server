@@ -11,8 +11,7 @@ class Api::V1::EventsController < ApplicationController
     event = Event.find_or_create_by(event_params)
     event.external_id = params[:event][:event_id]
     event.save!
-
-    render json: event.to_json(include: [:comments])
+    render json: event.package_json
   end
 
   def create

@@ -5,7 +5,7 @@ class Api::V1::CommentsController < ApplicationController
     comment = Comment.new(comment_params)
     comment.save!
     event = Event.find_by(id: params[:event_id])
-    render json: event.to_json(include: [:comments])
+    render json: event.package_json
 
   end
 
