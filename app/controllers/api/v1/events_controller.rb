@@ -1,11 +1,5 @@
 class Api::V1::EventsController < ApplicationController
-  # def index
-  #   # get an event by its slug
-  #   byebug
-  #   event = Event.find_by(slug: params[:slug])
-  #   render json: event.to_json(include: [:comments])
-  # end
-
+  
   def show
     # finding something in the external API and persisting
     event = Event.find_or_create_by(event_params)
