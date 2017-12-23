@@ -18,7 +18,7 @@ class Api::V1::AuthController < ApplicationController
         instagram: user.instagram,
         bio: user.bio,
         events: user.events
-        
+
        }
 
     else
