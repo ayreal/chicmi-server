@@ -38,6 +38,7 @@ class Event < ApplicationRecord
       {
         id: comment.id,
         name: comment.user.name,
+        photo: comment.user.photo,
         user_id: comment.user_id,
         event_id: comment.event_id,
         text: comment.text

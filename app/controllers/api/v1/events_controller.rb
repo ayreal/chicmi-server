@@ -1,5 +1,5 @@
 class Api::V1::EventsController < ApplicationController
-  
+
   def show
     # finding something in the external API and persisting
     event = Event.find_or_create_by(event_params)
@@ -15,7 +15,7 @@ class Api::V1::EventsController < ApplicationController
     user.events << event
     render json:
     {
-      id: user.id,
+      user: {id: user.id,
       name: user.name,
       email: user.email,
       photo: user.photo,
@@ -24,7 +24,9 @@ class Api::V1::EventsController < ApplicationController
       twitter: user.twitter,
       instagram: user.instagram,
       bio: user.bio,
-      events: user.events
+      events: user.events },
+      # remove this if it doesn't work
+      currentEvent: event.package_json
     }
   end
 
@@ -35,7 +37,7 @@ class Api::V1::EventsController < ApplicationController
     user.user_events.find_by(event_id: event.id).delete
     render json:
     {
-      id: user.id,
+      user: {id: user.id,
       name: user.name,
       email: user.email,
       photo: user.photo,
@@ -44,7 +46,8 @@ class Api::V1::EventsController < ApplicationController
       twitter: user.twitter,
       instagram: user.instagram,
       bio: user.bio,
-      events: user.events
+      events: user.events},
+      currentEvent: event.package_json
     }
   end
 
