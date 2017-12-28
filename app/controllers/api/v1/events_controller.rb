@@ -3,7 +3,9 @@ class Api::V1::EventsController < ApplicationController
   def show
     # finding something in the external API and persisting
     event = Event.find_or_create_by(event_params)
-    event.external_id = params[:event][:event_id]
+    if !event.external_id
+      event.external_id = params[:event][:event_id]
+    end
     event.save!
     render json: event.package_json
   end
