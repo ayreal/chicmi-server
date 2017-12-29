@@ -1,6 +1,7 @@
 class Api::V1::EventsController < ApplicationController
 
   def show
+    byebug
     # finding something in the external API and persisting
     event = Event.find_or_create_by(event_params)
     if !event.external_id
