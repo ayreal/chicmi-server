@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  validates :event_name_en, presence: true
   has_many :user_events
   has_many :users, through: :user_events
 
