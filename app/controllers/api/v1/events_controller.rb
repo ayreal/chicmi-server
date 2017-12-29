@@ -2,14 +2,14 @@ class Api::V1::EventsController < ApplicationController
 
   def show
     # finding something in the external API and persisting
+    # byebug
     event = Event.find_or_create_by(event_params)
     if !event.external_id
       event.external_id = params[:event][:id]
       event.save!
 
-    # byebug
     # persist designers associated if they're sent through as params
-
+      # byebug
       designers = params[:event][:designers]
       designers.each do |designer|
         new_designer = Designer.find_or_create_by(external_id: designer[:designer_id])
