@@ -6,7 +6,17 @@ class Api::V1::EventsController < ApplicationController
     if !event.external_id
       event.external_id = params[:event][:event_id]
     end
+    # persist designers associated
+    if params[:event][:designers].count > 0
+      designers = params[:event][:designers]
+      designers.each do |designer|
+        new_designer = Designer.find_or_create_by(external_id: designer[:designer_id])
+        new_designer.designer_name_en = designer[:designer_name]
+        event.designers << new_designer
+        new_designer.save!
+      end
     event.save!
+    end
     render json: event.package_json
   end
 

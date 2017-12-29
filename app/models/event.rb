@@ -29,7 +29,8 @@ class Event < ApplicationRecord
       longitude: self.longitude,
       latitude: self.latitude,
       event_logo_pin: self.event_logo_pin,
-      comments: self.comments_to_json
+      comments: self.comments_to_json,
+      designers: self.designers
     }
   end
 
