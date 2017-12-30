@@ -24,8 +24,8 @@ class Api::V1::DesignersController < ApplicationController
   def destroy
     # deleting a UserDesigner instance
     user = User.find_by(id: params[:user_id])
-    event = Event.find_by(id: params[:id])
-    user.user_events.find_by(event_id: event.id).delete
+    designer = Designer.find_by(id: params[:id])
+    user.user_designers.find_by(designer_id: designer.id).delete
     render json:
     {
       id: user.id,
