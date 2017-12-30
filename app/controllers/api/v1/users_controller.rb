@@ -14,17 +14,7 @@ class Api::V1::UsersController < ApplicationController
        token = JWT.encode(payload, ENV["MY_SECRET"], ENV["ALG"])
        render json: {
          token: token,
-         id: user.id,
-         name: user.name,
-         email: user.email,
-         photo: user.photo,
-         city_id: user.city_id,
-         username: user.username,
-         twitter: user.twitter,
-         instagram: user.instagram,
-         bio: user.bio,
-         events: user.events,
-         designers: user.designers
+         user: user.package_json
 
         }
      else

@@ -8,17 +8,7 @@ class Api::V1::AuthController < ApplicationController
       token = JWT.encode(payload, ENV["MY_SECRET"], ENV["ALG"])
       render json: {
         token: token,
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        photo: user.photo,
-        city_id: user.city_id,
-        username: user.username,
-        twitter: user.twitter,
-        instagram: user.instagram,
-        bio: user.bio,
-        events: user.events,
-        designers: user.designers
+        user: user.package_json
 
        }
 
@@ -34,19 +24,7 @@ class Api::V1::AuthController < ApplicationController
     user_id = decoded_token.first['user_id']
     user = User.find_by(id: user_id)
     if user
-      render json: {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        photo: user.photo,
-        city_id: user.city_id,
-        username: user.username,
-        twitter: user.twitter,
-        instagram: user.instagram,
-        bio: user.bio,
-        events: user.events,
-        designers: user.designers
-      }
+      render json: user.package_json
     else
       render json: {error: "Could not find this user. Username or password is incorrect."}, status: 401
     end

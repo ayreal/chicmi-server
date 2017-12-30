@@ -36,18 +36,7 @@ class Api::V1::EventsController < ApplicationController
     user.events << event
     render json:
     {
-      user: {id: user.id,
-      name: user.name,
-      email: user.email,
-      photo: user.photo,
-      city_id: user.city_id,
-      username: user.username,
-      twitter: user.twitter,
-      instagram: user.instagram,
-      bio: user.bio,
-      events: user.events,
-      designers: user.designers },
-      # remove this if it doesn't work
+      user: user.package_json,
       currentEvent: event.package_json
     }
   end
@@ -59,17 +48,7 @@ class Api::V1::EventsController < ApplicationController
     user.user_events.find_by(event_id: event.id).delete
     render json:
     {
-      user: {id: user.id,
-      name: user.name,
-      email: user.email,
-      photo: user.photo,
-      city_id: user.city_id,
-      username: user.username,
-      twitter: user.twitter,
-      instagram: user.instagram,
-      bio: user.bio,
-      events: user.events,
-      designers: user.designers },
+      user: user.package_json,
       currentEvent: event.package_json
     }
   end
