@@ -45,7 +45,8 @@ class Api::V1::EventsController < ApplicationController
       twitter: user.twitter,
       instagram: user.instagram,
       bio: user.bio,
-      events: user.events },
+      events: user.events,
+      designers: user.designers },
       # remove this if it doesn't work
       currentEvent: event.package_json
     }
@@ -67,7 +68,8 @@ class Api::V1::EventsController < ApplicationController
       twitter: user.twitter,
       instagram: user.instagram,
       bio: user.bio,
-      events: user.events},
+      events: user.events,
+      designers: user.designers },
       currentEvent: event.package_json
     }
   end
