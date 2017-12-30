@@ -23,7 +23,8 @@ class Api::V1::UsersController < ApplicationController
          twitter: user.twitter,
          instagram: user.instagram,
          bio: user.bio,
-         events: user.events
+         events: user.events,
+         designers: user.designers
 
         }
      else
