@@ -8,11 +8,19 @@ class Api::V1::EventsController < ApplicationController
       event.external_id = params[:event][:id]
       event.save!
 
+      # byebug
     # persist designers associated if they're sent through as params
       designers = params[:event][:designers]
       designers.each do |designer|
         new_designer = Designer.find_or_create_by(external_id: designer[:designer_id])
         new_designer.designer_name_en = designer[:designer_name]
+        new_designer.designer_hero_card_url = designer[:designer_hero_card_url]
+        new_designer.facebook = designer[:links][:facebook]
+        new_designer.instagram = designer[:links][:instagram]
+        new_designer.website = designer[:links][:website]
+        new_designer.twitter = designer[:links][:twitter]
+        new_designer.type_name = designer[:type_name]
+        new_designer.slug = designer[:slug]
         event.designers << new_designer
         new_designer.save!
       end
