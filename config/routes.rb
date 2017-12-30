@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index]
       resources :events, only: [:index, :create, :destroy]
       resources :comments, only: [:create]
+      resources :designers, only: [:create, :destroy]
       post '/signup', to: 'users#create'
       post '/login', to: 'auth#create'
       post '/current_user', to: 'auth#show'
