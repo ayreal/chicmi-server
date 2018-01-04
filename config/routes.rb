@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index]
       resources :events, only: [:index, :create, :destroy]
-      resources :comments, only: [:create]
+      resources :comments, only: [:create, :destroy]
       resources :designers, only: [:create, :destroy]
       post '/signup', to: 'users#create'
       post '/login', to: 'auth#create'

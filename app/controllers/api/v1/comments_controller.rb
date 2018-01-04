@@ -9,6 +9,13 @@ class Api::V1::CommentsController < ApplicationController
 
   end
 
+  def destroy
+    comment = Comment.find_by(id: params[:comment][:id])
+    event = Event.find_by(id: params[:comment][:event_id])
+    comment.destroy
+      render json: event.package_json
+  end
+
   private
    def comment_params
      params.require(:comment).permit(:user_id, :event_id, :text, :name)

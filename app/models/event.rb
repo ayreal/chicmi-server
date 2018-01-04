@@ -43,6 +43,7 @@ class Event < ApplicationRecord
         photo: comment.user.photo,
         user_id: comment.user_id,
         event_id: comment.event_id,
+        created_at: comment.created_at,
         text: comment.text
        }
     end
