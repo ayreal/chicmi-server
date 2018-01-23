@@ -36,7 +36,7 @@ A web app designed to connect style-conscious New Yorkers with upcoming fashion 
 
 [View live demo here](https://chicmi.herokuapp.com)
 
-![chicmi login](https://media.giphy.com/media/xULW8osixIAVS6WqTS/giphy.gif)
+![chicmi login](https://media.giphy.com/media/3o751V6TGDc3aaRfOM/giphy.gif)
 
 Logging in shows the user's attending events and alerts
 
@@ -50,9 +50,10 @@ An event can be added to gCal (with prior Google authentication)
 
 ![follow and unfollow](https://media.giphy.com/media/3ohc1bDJlf13oqzwfm/giphy.gif)
 
-Choosing to follow/unfollow an event changes the event's attendance and adds/removes it from the user's events.
+Choosing to follow/unfollow an event changes the event's attendance and adds/removes it from the user's events
 
-<br/>
+  <br/>
+
 ![follow and unfollow2](https://media.giphy.com/media/3ohc181vEjwQXfJl6g/giphy.gif)
 Events with higher attendance rates display an advisory to the user
 
