@@ -54,7 +54,7 @@ Choosing to follow/unfollow an event changes the event's attendance and adds/rem
 
   <br/>
 
-![follow and unfollow2](https://media.giphy.com/media/3ohc181vEjwQXfJl6g/giphy.gif)
+![follow and unfollow2](https://media.giphy.com/media/3o751V6TGDc3aaRfOM/giphy.gif)
 Events with higher attendance rates display an advisory to the user
 
   <br />
