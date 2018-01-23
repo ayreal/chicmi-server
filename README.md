@@ -25,6 +25,7 @@ A web app designed to connect style-conscious New Yorkers with upcoming fashion 
 * Users who are not authorized can view and search events but are prevented from interacting with them
 * Events and designers can be followed/unfollowed
 * An event show page displays the events details, comments, and associated designers
+* Events with higher attendance rates display an advisory to the user
 * Events link out to their respective social media pages and can be added to a user's gCal
 * Users can make comments on events and delete them if they are the authenticated user
 * An alert notification on login shows events a user is attending that are within a few days of ending
@@ -53,11 +54,6 @@ An event can be added to gCal (with prior Google authentication)
 Choosing to follow/unfollow an event changes the event's attendance and adds/removes it from the user's events
 
   <br/>
-
-![follow and unfollow2](https://media.giphy.com/media/3o751V6TGDc3aaRfOM/giphy.gif)
-Events with higher attendance rates display an advisory to the user
-
-  <br />
 
 ![comments](https://media.giphy.com/media/3oFzlUZF2yFmQZ9rLG/giphy.gif)
 
