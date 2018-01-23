@@ -36,42 +36,40 @@ A web app designed to connect style-conscious New Yorkers with upcoming fashion 
 
 [View live demo here](https://chicmi.herokuapp.com)
 
-![chicmi login](https://media.giphy.com/media/3oFzmeXuqLVN2zEDcc/giphy.gif)
+![chicmi login](https://media.giphy.com/media/xULW8osixIAVS6WqTS/giphy.gif)
 
 Logging in shows the user's attending events and alerts
 
  <br />
 
-![add to gcal](https://media.giphy.com/media/3ohc0TNwuR0JEWyG6k/giphy.gif)
+![add to gcal](https://media.giphy.com/media/26CaMrSZLgiabbIE8/giphy.gif)
 
 An event can be added to gCal (with prior Google authentication)
 
   <br />
 
-![follow and unfollow](https://media.giphy.com/media/3ohc181vEjwQXfJl6g/giphy.gif)
+![follow and unfollow](https://media.giphy.com/media/3ohc1bDJlf13oqzwfm/giphy.gif)
 
-Choosing to follow/unfollow an event changes the event's attendance and adds/removes it from the user's events
+Choosing to follow/unfollow an event changes the event's attendance and adds/removes it from the user's events.
 
-  <br />
-
-![event information](https://media.giphy.com/media/3ohc181vEjwQXfJl6g/giphy.gif)
-
+<br/>
+![follow and unfollow2](https://media.giphy.com/media/3ohc181vEjwQXfJl6g/giphy.gif)
 Events with higher attendance rates display an advisory to the user
 
   <br />
 
-![comments](https://media.giphy.com/media/l1IBhFlmmtL8tW4vK/giphy.gif)
+![comments](https://media.giphy.com/media/3oFzlUZF2yFmQZ9rLG/giphy.gif)
 
 Users can comment on events and delete their own comments
 
   <br />
 
-![search](https://media.giphy.com/media/xULW8CIzq58a7JD0s0/giphy.gif)
+![search](https://media.giphy.com/media/3oFzmqRhFl5IRld90k/giphy.gif)
 
 Events can be searched by name
 
   <br />
 
-![profile](https://media.giphy.com/media/xULW8JEPQ3e4vkPhJe/giphy.gif)
+![profile](https://media.giphy.com/media/l49JMoyQWfWG1sF5S/giphy.gif)
 
 Users can manage their events from a profile page and view events on a map/calendar
